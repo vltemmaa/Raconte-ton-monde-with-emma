@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RaconteTon Monde - Accueil</title>
+
+  <!-- Polices (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation">
+      <button class="menu-btn" id="menuBtn" aria-label="Ouvrir menu">
+        <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#e94b3c"/><g fill="#fff"><rect x="8" y="9" width="8" height="2" rx="1"/><rect x="8" y="13" width="8" height="2" rx="1"/></g></svg>
+      </button>
+
+      <nav class="navlist">
+        <ul>
+          <li class="active">ACCUEIL</li>
+          <li>MA BIO</li>
+          <li>GROUPE DE PARTAGE</li>
+          <li>DESTINATION</li>
+          <li>PODCAST</li>
+          <li>TEMOIGNAGE</li>
+          <li>CONSEIL</li>
+          <li>TU AS DES QUESTIONS</li>
+          <li>MES RESEAUX</li>
+        </ul>
+
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn" class="ico">in</a>
+          <a href="#" aria-label="Instagram" class="ico">ig</a>
+          <a href="#" aria-label="Facebook" class="ico">fb</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="brand">
+        <h1 class="title">RaconteTon Monde</h1>
+        <div class="plane" aria-hidden="true">✈️</div>
+      </header>
+
+      <section class="welcome-card" aria-labelledby="welcome-title">
+        <h2 id="welcome-title">Bienvenue sur Raconte Ton Monde</h2>
+        <div class="card">
+          <p>Je suis Emma, une passionnée de voyages et de rencontres.<br>
+          Ici, je te propose une autre façon de voyager — plus vraie, plus locale, plus humaine.<br><br>
+          Sur ce site, tu découvriras des témoignages, des rencontres inspirantes, des podcasts et des visites hors des sentiers battus.<br><br>
+          Parce que voyager, ce n’est pas seulement changer de décor, c’est partager des histoires, écouter les voix du monde et voir autrement.<br><br>
+          Prends ton sac, ton casque audio ou juste ta curiosité… et embarque avec moi pour explorer le monde autrement...</p>
+        </div>
+      </section>
+
+      <section class="interactive" aria-label="Globe interactif">
+        <h3 class="section-title">GLOBE INTERACTIF</h3>
+
+        <div class="globe-wrapper">
+          <!-- container where the interactive globe will render -->
+          <div id="globeViz"></div>
+
+          <!-- right & left text like your design -->
+          <div class="globe-text-right">Fais tourner le monde et<br>pointe les pays !</div>
+          <div class="globe-text-left">Dis nous où tu es déjà<br>voyager ? Et découvre des<br>nouvelles destinations !</div>
+        </div>
+
+        <!-- tooltip for pin clicks -->
+        <div id="pinTooltip" role="status" aria-live="polite"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Three.js and Globe.GL (CDN) -->
+  <script src="https://unpkg.com/three@0.150.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
