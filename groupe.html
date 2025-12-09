@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RaconteTon Monde - Groupe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="groupe">
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">RaconteTon Monde</div>
+      <nav class="main-nav" aria-label="Menu principal">
+        <a href="index.html" class="nav-item">Accueil</a>
+        <a href="bio.html" class="nav-item">Ma bio</a>
+        <a href="groupe.html" class="nav-item">Groupe</a>
+        <a href="destinations.html" class="nav-item">Destinations</a>
+        <a href="podcast.html" class="nav-item">Podcasts</a>
+        <a href="temoignages.html" class="nav-item">Témoignages</a>
+        <a href="conseils.html" class="nav-item">Conseils</a>
+      </nav>
+      <div class="socials">
+        <a href="https://www.instagram.com/vltemmaa/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <main class="page-content group-page">
+    <aside class="continent-list">
+      <h3>Continents</h3>
+      <ul>
+        <li><button class="continent-btn" data-cont="Europe">Europe</button></li>
+        <li><button class="continent-btn" data-cont="Afrique">Afrique</button></li>
+        <li><button class="continent-btn" data-cont="Amérique du Nord">Amérique du Nord</button></li>
+        <li><button class="continent-btn" data-cont="Amérique du Sud">Amérique du Sud</button></li>
+        <li><button class="continent-btn" data-cont="Antarctique">Antarctique</button></li>
+        <li><button class="continent-btn" data-cont="Asie">Asie</button></li>
+        <li><button class="continent-btn" data-cont="Océanie">Océanie</button></li>
+      </ul>
+    </aside>
+
+    <section class="chat-area">
+      <h2>Groupe de partage — <span id="current-continent">Global</span></h2>
+
+      <div class="chat-box" id="chatBox" aria-live="polite">
+        <!-- messages will appear here -->
+      </div>
+
+      <form id="chatForm" class="chat-form" aria-label="Envoyer un message">
+        <input type="text" id="chatName" placeholder="Ton prénom" required maxlength="30">
+        <input type="text" id="chatMsg" placeholder="Écrire un message..." required maxlength="400">
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
