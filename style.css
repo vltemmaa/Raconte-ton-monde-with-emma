@@ -1,0 +1,110 @@
+:root{
+  --white:#ffffff;
+  --green:#2b7a5e;        /* couleur verte pour pages impaires */
+  --accent:#e94b3c;       /* orange / corail pour titres */
+  --text-dark:#2f2b28;
+  --card-border: rgba(233,75,60,0.14);
+  --max-width:1100px;
+  --radius:10px;
+  --padding:18px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* Polices */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color:var(--text-dark);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Alternance fond selon data-page */
+/* pages with green background: bio, destinations, podcast */
+body[data-page="bio"],
+body[data-page="destinations"],
+body[data-page="podcast"]{
+  background:var(--green);
+  color:var(--white);
+}
+body[data-page="index"],
+body[data-page="groupe"],
+body[data-page="australie"],
+body[data-page="conseils"],
+body[data-page="temoignages"]{
+  background:var(--white);
+  color:var(--text-dark);
+}
+
+/* header */
+.site-header{background:transparent;padding:16px 0;position:sticky;top:0;z-index:40}
+.wrap{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:16px;padding:0 18px}
+.brand{font-family:'Playfair Display', serif;font-size:28px;color:var(--accent);font-weight:700;flex:0 0 auto}
+.main-nav{display:flex;gap:14px;flex:1;justify-content:center}
+.main-nav .nav-item{text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:700;color:inherit;opacity:0.95}
+.main-nav .nav-item:hover{outline:2px solid rgba(0,0,0,0.06)}
+.socials{flex:0 0 auto}
+.socials a{color:inherit;text-decoration:none;font-weight:700}
+.menu-toggle{display:none;background:none;border:0;font-size:20px;cursor:pointer;color:inherit}
+
+/* content wrapper */
+.page-content{max-width:var(--max-width);margin:18px auto;padding:0 18px 60px}
+
+/* main hero card */
+.intro-card{display:flex;justify-content:center;padding:36px 0}
+.hero-title{color:var(--accent);font-size:32px;text-align:center;margin-bottom:12px}
+.card{background:transparent;border-radius:var(--radius);padding:20px;border:2px solid var(--card-border);max-width:860px;box-shadow:var(--shadow)}
+/* when on green background, ensure card contrast */
+body[data-page="bio"] .card,
+body[data-page="destinations"] .card,
+body[data-page="podcast"] .card{
+  background:rgba(255,255,255,0.06);
+  border-color:rgba(255,255,255,0.12);
+}
+
+/* Under CTA */
+.cta-under{text-align:center;margin-top:22px;font-weight:600}
+
+/* group page layout */
+.group-page{display:flex;gap:20px}
+.continent-list{width:220px;background:transparent;padding:12px;border-radius:10px}
+.continent-list h3{color:var(--accent)}
+.continent-list ul{list-style:none;padding:0;margin:8px 0}
+.continent-list li{margin-bottom:8px}
+.continent-btn{display:block;width:100%;padding:8px;border-radius:8px;border:0;background:rgba(0,0,0,0.04);cursor:pointer}
+
+/* chat area */
+.chat-area{flex:1}
+.chat-box{min-height:300px;border:2px solid var(--card-border);border-radius:12px;padding:12px;overflow:auto;background:transparent}
+.chat-msg{margin-bottom:10px;padding:8px;border-radius:8px;max-width:80%}
+.chat-msg .meta{font-size:12px;opacity:0.8;margin-bottom:6px}
+.chat-form{display:flex;gap:8px;margin-top:12px}
+.chat-form input[type="text"]{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.chat-form button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:var(--white);font-weight:700;cursor:pointer}
+
+/* destinations grid */
+.dest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:12px}
+.dest-block{padding:16px;border-radius:10px;border:2px solid var(--card-border);background:transparent}
+.dest-block h3{color:var(--accent);margin-bottom:6px}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:var(--white);font-weight:700}
+.btn.disabled{opacity:0.5;pointer-events:none;background:#bfbfbf}
+
+/* detail */
+.detail .card{margin-top:12px}
+
+/* podcast */
+.podcast-list .card{padding:16px}
+
+/* tips bubbles */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-top:12px}
+.tip-bubble{padding:18px;border-radius:999px;background:var(--accent);color:var(--white);font-weight:700;box-shadow:var(--shadow)}
+
+/* small screens */
+@media (max-width:900px){
+  .main-nav{display:none}
+  .menu-toggle{display:inline-block}
+  .wrap{justify-content:space-between}
+  .group-page{flex-direction:column}
+  .continent-list{width:100%;display:flex;overflow:auto}
+}
